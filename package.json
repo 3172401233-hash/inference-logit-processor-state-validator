@@ -1,0 +1,13 @@
+{
+  "name": "inference-logit-processor-state-validator",
+  "version": "1.0.0",
+  "description": "验证动态批处理中 logit processor 链的按请求独立状态、分支复制与取消释放",
+  "type": "module",
+  "engines": {
+    "node": ">=24.16.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "start": "node src/cli.js scenarios/demo.json"
+  }
+}

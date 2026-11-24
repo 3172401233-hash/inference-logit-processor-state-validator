@@ -1,0 +1,27 @@
+{
+  "vocabSize": 24,
+  "seed": 7,
+  "steps": 8,
+  "requests": [
+    {
+      "id": "req-greedy",
+      "params": { "temperature": 0.2, "repetitionPenalty": 1.0, "stopTokens": [3], "maxTokens": 6 },
+      "history": [1, 2]
+    },
+    {
+      "id": "req-creative",
+      "params": { "temperature": 1.3, "repetitionPenalty": 1.4, "stopTokens": [3], "maxTokens": 6 },
+      "history": [1, 2]
+    },
+    {
+      "id": "req-cancelled",
+      "params": { "temperature": 0.9, "repetitionPenalty": 1.1, "stopTokens": [3], "maxTokens": 6 },
+      "history": [5]
+    }
+  ],
+  "branches": [
+    { "atStep": 2, "from": "req-creative", "id": "req-creative-b1" },
+    { "atStep": 3, "from": "req-creative", "id": "req-creative-b2" }
+  ],
+  "cancels": [{ "atStep": 4, "id": "req-cancelled" }]
+}
